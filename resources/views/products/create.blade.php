@@ -132,9 +132,9 @@
         e.preventDefault();
         var productImage    =  document.getElementById('inputImage').files[0];
         
-        var productImage = $('#inputImage').prop('files')[0];   
-        var form_data = new FormData();                  
-        form_data.append('image', productImage);
+//        var productImage = $('#inputImage').prop('files')[0];   
+//        var form_data = new FormData();                  
+//        form_data.append('image', productImage);
         
         console.log(productImage);
         $.ajax({
@@ -146,7 +146,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             mimeType: 'multipart/form-data',
-            data: form_data,//{ 'image': productImage} ,
+            data: { 'image': productImage} ,
             cache : false,
             processData: false,
             success:function(data) {
